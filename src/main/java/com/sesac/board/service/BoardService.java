@@ -20,20 +20,6 @@ public class BoardService {
 
     // 글 작성
     public void write(Board board, MultipartFile file) throws Exception{
-
-        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files"; //저장할 경로 지정
-
-        UUID uuid = UUID.randomUUID();//식별자 (파일 이름에 붙일 랜덤 이름을 생성)
-
-        String fileName = uuid + "_" + file.getOriginalFilename(); // 랜덤 이름을 파일 이름 앞에 붙이고 언더바뒤 파일이름
-
-        File saveFile = new File(projectPath, fileName); // 파일을 생성해 줄 건데 projectPath에  name이란 이름으로 넣는다
-
-        file.transferTo(saveFile);
-
-        board.setFilename(fileName);
-        board.setFilepath("/files/"+ fileName);
-
         boardRepository.save(board);
 
     }
