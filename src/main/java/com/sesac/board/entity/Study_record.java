@@ -28,4 +28,8 @@ public class Study_record {
     @org.hibernate.annotations.Generated(GenerationTime.ALWAYS)
     @Column(name="mod_day")
     private LocalDateTime mod_day;
+
+    @ManyToOne
+    @JoinColumn(name="member_id")
+    private Study_member study_member;
 }
