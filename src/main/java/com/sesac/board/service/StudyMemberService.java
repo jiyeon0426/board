@@ -40,6 +40,13 @@ public class StudyMemberService {
         return studyMemberRepo.findById(key_id).get();
     }
 
+    /**
+     * 아이디로 조회
+     * @param strLoginId
+     * @throws Exception
+     */
+    public Study_member doSelectLoginId(String strLoginId){return studyMemberRepo.findByLoginId(strLoginId); }
+
     /* Insert */
     public void doInsert(Study_member study_member) throws Exception {
         //입력과 저장은 save 사용
