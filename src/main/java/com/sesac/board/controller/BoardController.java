@@ -98,6 +98,7 @@ public class BoardController {
         return "message";
     }
 
+    /*
     @GetMapping("/")
     @ResponseBody
     public String main(){
@@ -105,4 +106,5 @@ public class BoardController {
         return "Hello World";
     }
 
+     */
 }
